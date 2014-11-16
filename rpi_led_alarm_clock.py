@@ -49,9 +49,9 @@ class RpiLedAlarmClock:
 		GPIO.setup(channel, GPIO.OUT)
 		GPIO.output(channel, GPIO.HIGH)
 
-		if how_long != -1: # -1 is forever
-			time.sleep(how_long)
-			GPIO.cleanup()
+		# if how_long != -1: # -1 is forever
+		# 	time.sleep(how_long)
+		# 	GPIO.cleanup()
 
 	def play_songfile():
 		print('playing song...')
