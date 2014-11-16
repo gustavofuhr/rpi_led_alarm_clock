@@ -32,6 +32,8 @@ class RpiLedAlarmClock:
 			except Exception as err:
 				print('Problem reading the configuration file..')
 				raise err;
+
+		GPIO.cleanup()
 			
 
 	def turn_on_LED(self, how_long = 60*60*4):
