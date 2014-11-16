@@ -57,7 +57,9 @@ class RpiLedAlarmClock:
 		print('playing song...')
 		mixer.init()
 		mixer.music.load(self.song_file)
-		mixer.music.play()
+		mixer.music.play(loops=-1)
+		while mixer.music.get_busy() == True:
+			continue
 
 
 	def wakeup(self):
