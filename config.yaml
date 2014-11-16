@@ -3,4 +3,4 @@ alarm_settings:
   gpio_pin: 24
   play_song: true
   song_settings:
-    song_file: "1-06 Fortunate Son.mp3"
+    song_file: "./1-06 Fortunate Son.mp3"

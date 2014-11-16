@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import yaml
 import sched, time
 from datetime import datetime
-
+from pygame import mixer
 
 def time_now():
 	d = datetime.now()
@@ -52,10 +52,17 @@ class RpiLedAlarmClock:
 			time.sleep(how_long)
 			GPIO.cleanup()
 
+	def play_songfile():
+		mixer.init()
+		mixer.music.load(self.song_file)
+		mixer.music.play()
+
 
 	def wakeup(self):
 		print('Wake up pretty girl!')
 		self.turn_on_LED()
+		if self.play_song
+			self.play_songfile()
 
 
 	def activate(self):
