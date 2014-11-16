@@ -33,6 +33,11 @@ class RpiLedAlarmClock:
 				print('Problem reading the configuration file..')
 				raise err;
 
+		# clean up channel
+		channel = self.gpio_pin
+
+		GPIO.setmode(GPIO.BCM)
+		GPIO.setup(channel, GPIO.OUT)
 		GPIO.cleanup()
 			
 
