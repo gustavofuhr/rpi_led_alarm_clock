@@ -76,8 +76,9 @@ class RpiLedAlarmClock:
 		FMT = '%H:%M'
 		tdelta = datetime.strptime(self.hour, FMT) - time_now()
 		seconds2wait = tdelta.total_seconds()
-		
-		print('Gonna wakeup in '+str(tdelta))
+
+		if seconds2wait < 0: # go to next day
+			seconds2wait = seconds2wait + 24*60*60
 
 		s.enter(seconds2wait, 1, self.wakeup, ())
 		s.run()
