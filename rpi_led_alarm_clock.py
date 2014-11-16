@@ -53,7 +53,7 @@ class RpiLedAlarmClock:
 		# 	time.sleep(how_long)
 		# 	GPIO.cleanup()
 
-	def play_songfile():
+	def play_songfile(self):
 		print('playing song...')
 		mixer.init()
 		mixer.music.load(self.song_file)
