@@ -27,8 +27,9 @@ class RpiLedAlarmClock:
 				self.gpio_pin = settings['gpio_pin']
 				self.play_song = settings['play_song']
 				if self.play_song:
-					print('Gonna play songs...')
 					self.song_file = settings['song_settings']['song_file']
+					print('Gonna play song '+self.song_file)
+
 			except Exception as err:
 				print('Problem reading the configuration file..')
 				raise err;
@@ -73,6 +74,8 @@ class RpiLedAlarmClock:
 		tdelta = datetime.strptime(self.hour, FMT) - time_now()
 		seconds2wait = tdelta.total_seconds()
 		
+		print('Gonna wakeup in '+str(tdelta))
+
 		s.enter(seconds2wait, 1, self.wakeup, ())
 		s.run()
 
