@@ -61,7 +61,7 @@ class RpiLedAlarmClock:
 	def wakeup(self):
 		print('Wake up pretty girl!')
 		self.turn_on_LED()
-		if self.play_song
+		if self.play_song:
 			self.play_songfile()
 
 
